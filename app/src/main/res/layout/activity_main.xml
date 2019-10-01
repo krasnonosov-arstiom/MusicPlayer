@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="@drawable/background">
+
+    <LinearLayout
+        android:id="@+id/relate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:orientation="horizontal" />
+
+    <RelativeLayout
+        android:id="@+id/songNameLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/relate"
+        android:layout_centerHorizontal="true">
+
+        <RelativeLayout
+            android:id="@+id/music_art"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="32dp">
+
+            <ImageView
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/music_art_background" />
+
+            <ImageView
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/music_art" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/songNameTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/music_art"
+            android:layout_centerHorizontal="true"
+            android:background="#36289B"
+            android:text="My song"
+            android:textColor="#FF8F41"
+            android:textSize="24sp"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/playPauseButton"
+        android:layout_marginBottom="16dp">
+
+        <TextView
+            android:id="@+id/currentPlayingTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:layout_marginStart="16dp"
+            android:textColor="#FF8F41"
+            android:text="00:00"/>
+
+        <TextView
+            android:id="@+id/fullPlayingTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:textSize="16sp"
+            android:layout_alignParentEnd="true"
+            android:textColor="#FF8F41"
+            android:text="00:00"/>
+
+        <SeekBar
+            android:id="@+id/seekBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_below="@+id/currentPlayingTime"
+            android:thumbTint="#FF8F41"/>
+
+    </RelativeLayout>
+
+    <ImageButton
+        android:id="@+id/playPauseButton"
+        android:onClick="playPause"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="64dp"
+        android:src="@drawable/play"
+        android:background="@drawable/music_art_background"/>
+
+    <ImageButton
+        android:id="@+id/nextButton"
+        android:onClick="next"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_alignLeft="@+id/playPauseButton"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="64dp"
+        android:layout_marginStart="98dp"
+        android:src="@drawable/next"
+        android:background="@drawable/music_art_background"/>
+
+    <ImageButton
+        android:id="@+id/previousButton"
+        android:onClick="previous"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_alignRight="@+id/playPauseButton"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="64dp"
+        android:layout_marginEnd="98dp"
+        android:src="@drawable/previous"
+        android:background="@drawable/music_art_background"/>
+
+
+</RelativeLayout>
